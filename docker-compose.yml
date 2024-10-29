@@ -1,0 +1,22 @@
+services:
+  wm-backend:
+    build:
+      context: ./wm-backend
+      dockerfile: Dockerfile
+    container_name: wm-backend
+    ports:
+      - '1337:1337'
+    environment:
+      NODE_ENV: development
+
+  wm-frontend:
+    build:
+      context: ./wm-frontend
+      dockerfile: Dockerfile
+    container_name: wm-frontend
+    ports:
+      - '3000:3000'
+    environment:
+      NEXT_PUBLIC_STRAPI_URL: 'http://wm-backend:1337'
+    depends_on:
+      - wm-backend
