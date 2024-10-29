@@ -11,14 +11,15 @@ Antes de começar, você precisa ter instalado em sua máquina:
 - Git
 
 ## 📦 Estrutura do Projeto
+
 ```.
 ├── docker-compose.yml
 ├── wm-backend/
 │   ├── Dockerfile
 │   └── ... (arquivos do Strapi)
 └── wm-frontend/
-├── Dockerfile
-└── ... (arquivos do Next)
+    ├── Dockerfile
+    └── ... (arquivos do Next)
 ```
 
 ## 🛠️ Configuração e Instalação
