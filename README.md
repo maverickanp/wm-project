@@ -127,6 +127,7 @@ sudo docker compose up
 ```
 
 🔄 Atualizações e Manutenção
+
 Para atualizar as imagens e reconstruir os containers:
 
 ```bash
