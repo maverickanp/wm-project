@@ -46,18 +46,22 @@ Iniciar o frontend na porta 3000
 📝 Informações Importantes
 Backend (Strapi)
 
+```bash
 URL: http://localhost:1337
-Tecnologias:
+```
 
+Tecnologias:
 Strapi 5
 Node.js 18 (Alpine)
 SQLite como banco de dados
 
 Frontend (React)
 
+```bash
 URL: http://localhost:3000
-Tecnologias:
+```
 
+Tecnologias:
 React 18
 TypeScript
 Node.js 20
