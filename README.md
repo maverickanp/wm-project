@@ -33,7 +33,8 @@ git clone git@github.com:maverickanp/wm-frontend.git
 
 2.Construa e inicie os containers:
 
-```docker compose up --build
+```bash
+docker compose up --build
 ```
 
 Este comando irá:
@@ -52,8 +53,6 @@ Strapi 5
 Node.js 18 (Alpine)
 SQLite como banco de dados
 
-
-
 Frontend (React)
 
 URL: http://localhost:3000
@@ -66,12 +65,14 @@ Node.js 20
 🔍 Monitoramento
 Para verificar o status dos containers:
 
-```docker compose ps
+```bash
+docker compose ps
 ```
 
 Para ver os logs dos containers:
 
-```# Todos os containers
+```bash
+# Todos os containers
 docker compose logs
 
 # Apenas backend
@@ -84,7 +85,8 @@ docker compose logs wm-frontend
 🛑 Parando os Containers
 Para parar os containers:
 
-```docker compose down
+```bash
+docker compose down
 ```
 
 🔧 Resolução de Problemas
@@ -95,7 +97,8 @@ Portas em uso
 Erro: "port is already allocated"
 Solução: Verifique se as portas 1337 e 3000 estão livres
 
-```# Windows/Linux
+```bash
+# Windows/Linux
 netstat -ano | findstr 1337
 netstat -ano | findstr 3000
 ```
@@ -109,18 +112,21 @@ Erro de conexão entre containers
 
 Verifique se a variável de ambiente NEXT_PUBLIC_STRAPI_URL está correta no .env.local do wm-frontend
 
-```NEXT_PUBLIC_STRAPI_URL=http://localhost:3000
+```bash
+NEXT_PUBLIC_STRAPI_URL=http://localhost:3000
 ```
 
 Verifique se as variáveis de ambiente do Strapi está correta no .env do wm-backend, use o .env.example como parametro, por padrao foi configurado o sqlite como banco de dados
 
-```sudo docker compose up
+```bash
+sudo docker compose up
 ```
 
 🔄 Atualizações e Manutenção
 Para atualizar as imagens e reconstruir os containers:
 
-```docker compose down
+```bash
+docker compose down
 docker compose build --no-cache
 docker compose up
 ```
