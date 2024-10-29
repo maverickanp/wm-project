@@ -1,27 +1,33 @@
-Docker Setup - Backend (Strapi) + Frontend (React)
-Este projeto consiste em uma aplicação fullstack com um backend em Strapi 5 e um frontend em React com TypeScript, configurados para rodar em containers Docker.
-🚀 Pré-requisitos
+# Docker Setup - Backend (Strapi) + Frontend (React)
+
+Este projeto consiste em uma aplicação fullstack com um backend em Strapi 5 e um frontend em Next 15 com TypeScript, configurados para rodar em containers Docker.
+
+## 🚀 Pré-requisitos
+
 Antes de começar, você precisa ter instalado em sua máquina:
 
-Docker
-Docker Compose
-Git
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- Git
 
-📦 Estrutura do Projeto
-Copy.
+## 📦 Estrutura do Projeto
+
+.
 ├── docker-compose.yml
 ├── wm-backend/
 │   ├── Dockerfile
 │   └── ... (arquivos do Strapi)
 └── wm-frontend/
-    ├── Dockerfile
-    └── ... (arquivos do React)
-🛠️ Configuração e Instalação
+├── Dockerfile
+└── ... (arquivos do React)
 
-Clone o repositório:
+Copy
+## 🛠️ Configuração e Instalação
 
-bashCopygit clone git@github.com:maverickanp/wm-backend.git
-bashCopygit clone git@github.com:maverickanp/wm-frontend.git
+1. Clone o repositório:
+```bash
+git clone git@github.com:maverickanp/wm-backend.git
+git clone git@github.com:maverickanp/wm-frontend.git
 
 Construa e inicie os containers:
 
@@ -43,14 +49,16 @@ Node.js 18 (Alpine)
 SQLite como banco de dados
 
 
+
 Frontend (React)
 
 URL: http://localhost:3000
 Tecnologias:
 
-next 15
+React 18
 TypeScript
 Node.js 20
+
 
 
 🔍 Monitoramento
@@ -89,8 +97,8 @@ bashCopysudo docker compose up
 
 Erro de conexão entre containers
 
-Verifique se a variável de ambiente NEXT_PUBLIC_STRAPI_URL está correta no arquivo .env.local no projeto wm-frontend
-Verifique se as variáveis de ambiente do Strapi foram preenchidas corretamente, usando a .env.example como parametro
+Verifique se a variável de ambiente NEXT_PUBLIC_STRAPI_URL está correta no docker-compose.yml
+
 
 
 🔄 Atualizações e Manutenção
