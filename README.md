@@ -39,43 +39,33 @@ docker compose up --build
 Este comando irá:
 
 Construir as imagens dos containers
-Iniciar o backend na porta 1337
-Iniciar o frontend na porta 3000
+
+- Iniciar o backend na porta 1337
+- Iniciar o frontend na porta 3000
 
 📝 Informações Importantes
 
-**Backend (Strapi)
+## Backend (Strapi)
 
 ```bash
 URL: http://localhost:1337
 ```
 
-*Tecnologias:
--Strapi 5
--Node.js 18 (Alpine)
--SQLite como banco de dados
-
-Frontend (React)
+## Frontend (Next)
 
 ```bash
 URL: http://localhost:3000
 ```
 
-*Tecnologias:
-
--React 18
--TypeScript
--Node.js 20
-
 🔍 Monitoramento
 
-**Para verificar o status dos containers:
+## Para verificar o status dos containers:
 
 ```bash
 docker compose ps
 ```
 
-**Para ver os logs dos containers:
+## Para ver os logs dos containers:
 
 ```bash
 # Todos os containers
@@ -90,7 +80,7 @@ docker compose logs wm-frontend
 
 🛑 Parando os Containers
 
-**Para parar os containers:
+## Para parar os containers:
 
 ```bash
 docker compose down
@@ -98,12 +88,13 @@ docker compose down
 
 🔧 Resolução de Problemas
 
-**Problemas comuns:
+## Problemas comuns:
 
--Portas em uso
+- Portas em uso
 
 Erro: "port is already allocated"
--Solução: Verifique se as portas 1337 e 3000 estão livres
+
+- Solução: Verifique se as portas 1337 e 3000 estão livres
 
 ```bash
 # Windows/Linux
@@ -111,14 +102,15 @@ netstat -ano | findstr 1337
 netstat -ano | findstr 3000
 ```
 
-Problemas de permissão
+## Problemas de permissão
 
 Erro: "permission denied"
--Solução: Execute os comandos com sudo (Linux/Mac)
+
+- Solução: Execute os comandos com sudo (Linux/Mac)
 
 Erro de conexão entre containers
 
--Verifique se a variável de ambiente NEXT_PUBLIC_STRAPI_URL está correta no .env.local do wm-frontend
+- Verifique se a variável de ambiente NEXT_PUBLIC_STRAPI_URL está correta no .env.local do wm-frontend
 
 ```bash
 NEXT_PUBLIC_STRAPI_URL=http://localhost:3000
@@ -132,7 +124,7 @@ sudo docker compose up
 
 🔄 Atualizações e Manutenção
 
-*Para atualizar as imagens e reconstruir os containers:
+## Para atualizar as imagens e reconstruir os containers:
 
 ```bash
 docker compose down
