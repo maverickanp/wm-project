@@ -11,27 +11,31 @@ Antes de começar, você precisa ter instalado em sua máquina:
 - Git
 
 ## 📦 Estrutura do Projeto
-
-.
+```.
 ├── docker-compose.yml
 ├── wm-backend/
 │   ├── Dockerfile
 │   └── ... (arquivos do Strapi)
 └── wm-frontend/
 ├── Dockerfile
-└── ... (arquivos do React)
+└── ... (arquivos do Next)
+```
 
 Copy
 ## 🛠️ Configuração e Instalação
 
-1. Clone o repositório:
+1.Clone o repositório:
+
 ```bash
 git clone git@github.com:maverickanp/wm-backend.git
 git clone git@github.com:maverickanp/wm-frontend.git
+```
 
-Construa e inicie os containers:
+2.Construa e inicie os containers:
 
-bashCopydocker compose up --build
+```docker compose up --build
+```
+
 Este comando irá:
 
 Construir as imagens dos containers
@@ -59,13 +63,15 @@ React 18
 TypeScript
 Node.js 20
 
-
-
 🔍 Monitoramento
 Para verificar o status dos containers:
-bashCopydocker compose ps
+
+```docker compose ps
+```
+
 Para ver os logs dos containers:
-bashCopy# Todos os containers
+
+```# Todos os containers
 docker compose logs
 
 # Apenas backend
@@ -73,9 +79,14 @@ docker compose logs wm-backend
 
 # Apenas frontend
 docker compose logs wm-frontend
+```
+
 🛑 Parando os Containers
 Para parar os containers:
-bashCopydocker compose down
+
+```docker compose down
+```
+
 🔧 Resolução de Problemas
 Problemas comuns:
 
@@ -84,25 +95,32 @@ Portas em uso
 Erro: "port is already allocated"
 Solução: Verifique se as portas 1337 e 3000 estão livres
 
-bashCopy# Windows/Linux
+```# Windows/Linux
 netstat -ano | findstr 1337
 netstat -ano | findstr 3000
+```
 
 Problemas de permissão
 
 Erro: "permission denied"
 Solução: Execute os comandos com sudo (Linux/Mac)
 
-bashCopysudo docker compose up
-
 Erro de conexão entre containers
 
-Verifique se a variável de ambiente NEXT_PUBLIC_STRAPI_URL está correta no docker-compose.yml
+Verifique se a variável de ambiente NEXT_PUBLIC_STRAPI_URL está correta no .env.local do wm-frontend
 
+```NEXT_PUBLIC_STRAPI_URL=http://localhost:3000
+```
 
+Verifique se as variáveis de ambiente do Strapi está correta no .env do wm-backend, use o .env.example como parametro, por padrao foi configurado o sqlite como banco de dados
+
+```sudo docker compose up
+```
 
 🔄 Atualizações e Manutenção
 Para atualizar as imagens e reconstruir os containers:
-bashCopydocker compose down
+
+```docker compose down
 docker compose build --no-cache
 docker compose up
+```
