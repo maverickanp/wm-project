@@ -13,6 +13,8 @@ Antes de começar, você precisa ter instalado em sua máquina:
 ## 📦 Estrutura do Projeto
 
 ```.
+├── .env.docker.frontend
+├── .env.docker.backend
 ├── docker-compose.yml
 ├── wm-backend/
 │   ├── Dockerfile
@@ -24,11 +26,10 @@ Antes de começar, você precisa ter instalado em sua máquina:
 
 ## 🛠️ Configuração e Instalação
 
-Clone o repositório:
+Clone por submodulo:
 
 ```bash
-git clone git@github.com:maverickanp/wm-backend.git
-git clone git@github.com:maverickanp/wm-frontend.git
+git clone --recurse-submodules -j8 https://github.com/maverickanp/wm-project.git
 ```
 
 Construa e inicie os containers:
@@ -57,6 +58,10 @@ URL: http://localhost:1337
 ```bash
 URL: http://localhost:3000
 ```
+
+## Cadastro das Cidades e Estados o Strapi
+
+- Importante realizar o cadastro no Strapi para carregar no frontend os dados do ambiente.
 
 🔍 Monitoramento
 
