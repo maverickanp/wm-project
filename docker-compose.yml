@@ -6,8 +6,8 @@ services:
     container_name: wm-backend
     ports:
       - '1337:1337'
-    environment:
-      NODE_ENV: development
+    env_file:
+      - .env.docker.backend
 
   wm-frontend:
     build:
@@ -16,7 +16,7 @@ services:
     container_name: wm-frontend
     ports:
       - '3000:3000'
-    environment:
-      NEXT_PUBLIC_STRAPI_URL: 'http://wm-backend:1337'
+    env_file:
+      - .env.docker.frontend
     depends_on:
-      - wm-backend
+      - wm-backend    
