@@ -1,0 +1,6 @@
+[submodule "wm-backend"]
+	path = wm-backend
+	url = https://github.com/maverickanp/wm-backend.git
+[submodule "wm-frontend"]
+	path = wm-frontend
+	url = https://github.com/maverickanp/wm-frontend.git
